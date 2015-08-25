@@ -26,6 +26,8 @@ RUN cd /opt/ && tar -xvf go.tar.gz && rm -rf go.tar.gz
 
 ADD ./unison /usr/local/bin/
 
+CMD mkdir /home/nikmash/Projects
+
 EXPOSE 22
 
 CMD ["wrapdocker"]
