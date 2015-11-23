@@ -2,11 +2,14 @@ FROM ubuntu
 RUN apt-get update
 RUN useradd -m nikmash && echo "nikmash:changeme" | chpasswd && adduser nikmash sudo
 
-RUN apt-get -y install sudo curl wget git vim wget
+RUN apt-get -y install sudo curl wget git vim wget nodejs npm git-core
 
 RUN apt-get install -y openssh-server
 ADD ./ssh /
 RUN bin/bash /configure.sh && rm /configure.sh
+
+# Symbolic link for node
+RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN apt-get install -y apt-transport-https ca-certificates lxc iptables
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
