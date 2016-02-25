@@ -12,7 +12,7 @@ RUN bin/bash /configure.sh && rm /configure.sh
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN apt-get install -y apt-transport-https ca-certificates lxc iptables
-RUN curl -sSL https://get.docker.com/ubuntu/ | sh
+RUN curl -sSL https://get.docker.com/ | sh
 ADD ./wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
 VOLUME /var/lib/docker
