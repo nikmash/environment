@@ -1,6 +1,6 @@
 FROM ubuntu
 RUN apt-get update
-RUN useradd -m nikmash && echo "nikmash:changeme" | chpasswd && adduser nikmash sudo
+RUN useradd -m abode && echo "abode:changeme" | chpasswd && adduser abode sudo
 
 RUN apt-get -y install sudo curl wget git vim wget nodejs npm git-core
 
